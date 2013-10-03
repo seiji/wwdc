@@ -8,7 +8,7 @@ command :open do |c|
 
     session = get(path: "/2013/sessions/#{@number}") do |response|
       url = response.headers['Link'].scan(/\<(.+)\>/).flatten.first
-      `open "#{url}"`
+      `open -a Safari "#{url}"`
     end
   end
 end
